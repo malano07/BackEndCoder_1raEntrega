@@ -1,0 +1,55 @@
+[
+  {
+    "title": "Producto de prueba",
+    "description": "Descripción del producto de prueba",
+    "code": "PRD123",
+    "price": 100.5,
+    "status": true,
+    "stock": 25,
+    "category": "Electrónica",
+    "thumbnails": [
+      "https://example.com/image1.jpg",
+      "https://example.com/image2.jpg"
+    ],
+    "id": 1
+  },
+  {
+    "title": "Auriculares Inalámbricos",
+    "description": "Auriculares Bluetooth con cancelación de ruido.",
+    "code": "AUR123",
+    "price": 59.99,
+    "status": true,
+    "stock": 100,
+    "category": "Electrónica",
+    "thumbnails": [
+      "https://example.com/auriculares.jpg"
+    ],
+    "id": 2
+  },
+  {
+    "title": "Teclado Mecánico RGB",
+    "description": "Teclado mecánico con retroiluminación RGB personalizable.",
+    "code": "TEC456",
+    "price": 89.99,
+    "status": true,
+    "stock": 50,
+    "category": "Informática",
+    "thumbnails": [
+      "https://example.com/teclado.jpg"
+    ],
+    "id": 3
+  },
+  {
+    "title": "Mochila para Laptop",
+    "description": "Mochila resistente al agua con compartimiento para laptops de hasta 15.6 pulgadas.",
+    "code": "MOC789",
+    "price": 29.99,
+    "status": true,
+    "stock": 200,
+    "category": "Accesorios",
+    "thumbnails": [
+      "https://example.com/mochila.jpg"
+    ],
+    "id": 4
+  }
+]
