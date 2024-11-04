@@ -1,0 +1,23 @@
+{{#extend 'layouts/main'}}
+{{#content 'body'}}
+    <h1>Lista de Productos en Tiempo Real</h1>
+    <ul id="product-list">
+        {{#each products}}
+            <li data-id="{{this.id}}">{{this.title}} - ${{this.price}}</li>
+        {{/each}}
+    </ul>
+
+    <h2>Añadir Producto</h2>
+    <form id="add-product-form">
+        <input type="text" id="title" placeholder="Título" required>
+        <input type="number" id="price" placeholder="Precio" required>
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <h2>Eliminar Producto</h2>
+    <form id="delete-product-form">
+        <input type="number" id="delete-product-id" placeholder="ID de Producto" required>
+        <button type="submit">Eliminar Producto</button>
+    </form>
+{{/content}}
+{{/extend}}
