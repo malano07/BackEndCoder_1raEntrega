@@ -1,6 +1,6 @@
 const socket = io();
 
-// Función para actualizar la lista de productos
+
 socket.on('updateProducts', (products) => {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -13,7 +13,7 @@ socket.on('updateProducts', (products) => {
     });
 });
 
-// Lógica para enviar un nuevo producto
+
 document.getElementById('add-product-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const title = document.getElementById('title').value;
@@ -21,7 +21,7 @@ document.getElementById('add-product-form').addEventListener('submit', (e) => {
     socket.emit('newProduct', { title, price: parseFloat(price) });
 });
 
-// Lógica para eliminar un producto
+
 document.getElementById('delete-product-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const productId = parseInt(document.getElementById('delete-product-id').value);

@@ -12,36 +12,28 @@ const productManager = new ProductManager();
 
 
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Configuración de Handlebars
+
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
-
-// Middleware para servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
-
-// Rutas de productos y carritos
-app.use('/api/products', productsRouter(io));  // Pasamos 'io' al router de productos
+app.use('/api/products', productsRouter(io));  
 app.use('/api/carts', cartsRouter);
-
-// Rutas de vistas
 app.get('/home', async (req, res) => {
     const products = await productManager.getProducts();
     res.render('home', { products });
 });
 
-app.get('/realtimeproducts', async (req, res) => {
+app.get('/realtime', async (req, res) => {
     const products = await productManager.getProducts();
-    res.render('realTimeProducts', { products });
+    res.render('realTime', { products });
 });
-
-
 
 io.on('connection', (socket) => {
     console.log('Cliente conectado');
@@ -56,10 +48,6 @@ io.on('connection', (socket) => {
         io.emit('updateProducts', await productManager.getProducts());
     });
 });
-
-
-
-
 server.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
 

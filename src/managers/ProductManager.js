@@ -35,7 +35,7 @@ class ProductManager {
             return product;
         } catch (error) {
             console.error('Error agregando producto:', error);
-            throw error; // Puedes lanzar el error de nuevo si quieres que el controlador lo capture
+            
         }
     }
 
