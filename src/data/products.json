@@ -51,5 +51,18 @@
       "https://example.com/mochila.jpg"
     ],
     "id": 4
+  },
+  {
+    "title": "Silla Ergonómica",
+    "description": "Silla de oficina con soporte lumbar ajustable y material respirable.",
+    "code": "SIL202",
+    "price": 129.9,
+    "status": true,
+    "stock": 40,
+    "category": "Muebles",
+    "thumbnails": [
+      "https://example.com/silla.jpg"
+    ],
+    "id": 5
   }
 ]
