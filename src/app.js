@@ -8,11 +8,12 @@ const productsRouter = require('./routers/productsRouter');
 const cartsRouter = require('./routers/cartsRouter');
 
 const ProductManager = require('./managers/ProductManager');
+const { aborted } = require('util');
 const productManager = new ProductManager();
 
 
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 const server = http.createServer(app);
 const io = new Server(server);
 
@@ -30,10 +31,11 @@ app.get('/home', async (req, res) => {
     res.render('home', { products });
 });
 
-app.get('/realtime', async (req, res) => {
+app.get('/realTimeProducts', async (req, res) => {
     const products = await productManager.getProducts();
-    res.render('realTime', { products });
+    res.render('realTimeProducts', { products });
 });
+
 
 io.on('connection', (socket) => {
     console.log('Cliente conectado');
